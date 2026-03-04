@@ -1,155 +1,122 @@
-# 🚀 Modelo de Autenticação Fullstack
+![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Template base de autenticação fullstack com **React, Node.js, Express, Prisma e PostgreSQL**.  
+🔐 auth-starter-template
+📌 Sobre o Projeto
 
-Este projeto foi criado para servir como estrutura padrão de **login e cadastro com JWT**, podendo ser reutilizado como base para novos sistemas.
+Sistema completo de autenticação Fullstack desenvolvido com foco em arquitetura profissional, segurança e boas práticas.
 
----
+Inclui:
 
-## 🛠 Tecnologias Utilizadas
+Cadastro de usuário
 
-### 🔹 Backend
-- Node.js
-- Express
-- Prisma ORM (v5)
-- PostgreSQL
-- JWT (Autenticação)
-- Bcrypt (Criptografia de Senha)
-- CORS
-- Dotenv
+Login com JWT
 
-### 🔹 Frontend
-- React
-- Vite
-- React Router DOM
-- Axios
+Proteção de rotas
 
----
+Middleware de autenticação
 
-## 📁 Estrutura do Projeto
-auth-starter-template/
+Integração frontend + backend
+
+Estrutura preparada para produção
+
+🚀 Tecnologias Utilizadas
+Backend
+
+Node.js
+
+Express
+
+Prisma ORM (v5)
+
+PostgreSQL
+
+JWT (Json Web Token)
+
+Bcrypt
+
+Frontend
+
+React (Vite)
+
+Axios
+
+CSS
+
+🏗 Arquitetura
+
+auth-system
+├── backend
+│ ├── controllers
+│ ├── middleware
+│ ├── routes
+│ ├── prisma
+│ └── server.js
 │
-├── backend/ # API Express com autenticação JWT
-└── frontend/ # Aplicação React com layout e rotas protegidas
+└── frontend
+├── pages
+├── services
+└── App.jsx
 
----
+Arquitetura separada por responsabilidades seguindo padrão REST.
 
-# ⚙️ Como Rodar o Projeto
+🔐 Fluxo de Autenticação
 
-## 📌 Pré-requisitos
+Usuário realiza cadastro
 
-- Node.js instalado
-- PostgreSQL rodando
-- Banco de dados criado
+Senha é criptografada com Bcrypt
 
----
+Login gera token JWT
 
-# 🔹 Configuração do Backend
+Token é validado em middleware
 
-1. Acesse a pasta:
+Rotas protegidas exigem autenticação
 
-```bash
+⚙️ Como rodar o projeto
+1️⃣ Clonar repositório
+git clone https://github.com/seuusuario/auth-fullstack-system.git
+
+2️⃣ Backend
 cd backend
-
-2. Instale as dependências:
-
 npm install
+npx prisma migrate dev
+npm run dev
 
-3. Edite o arquivo .env baseado no exemplo abaixo:
-DATABASE_URL="postgresql://usuario:senha@localhost:5432/nomedobanco"
+Criar arquivo .env:
+DATABASE_URL="sua_string_postgres"
 JWT_SECRET="sua_chave_secreta"
 PORT=3001
 
-4. Gere o client do Prisma:
-npx prisma generate
-
-5. Execute as migrações:
-npx prisma migrate dev --name init
-
-6. Inicie o servidor:
-npm run dev
-
-📍 Backend rodando em:
-http://localhost:3001
-
-🔹 Configuração do Frontend
-
-1. Acesse a pasta:
-
+3️⃣ Frontend
 cd frontend
-
-2. Instale as dependências:
-
 npm install
-
-3. Inicie o projeto:
-
 npm run dev
 
-📍 Frontend rodando em:
-http://localhost:5173
+Criar .env:
+VITE_API_URL=http://localhost:3001
 
-Funcionalidades
+🌎 Deploy
+Backend: Render
+Frontend: Vercel
 
-✅ Cadastro de usuário
+Projeto pronto para produção.
 
-✅ Login com autenticação JWT
+📌 Objetivo
 
-✅ Senha criptografada com Bcrypt
+Este projeto foi desenvolvido para consolidar conhecimentos em:
 
-✅ Middleware de proteção de rotas
+Arquitetura Fullstack
 
-✅ Rota protegida /api/me
+Autenticação segura
 
-✅ Layout com Sidebar, Header e Footer
+Integração API REST
 
-✅ Controle básico de perfil de usuário
+Deploy em produção
 
-model User {
-  id     Int    @id @default(autoincrement())
-  nome   String
-  email  String @unique
-  senha  String
-  perfil String
-}
+👨‍💻 Autor
 
-Rotas da API
-🔹 Registro
-
-POST /api/register
-
-🔹 Login
-
-POST /api/login
-
-🔹 Perfil (Protegida)
-
-GET /api/me
-
-Objetivo do Projeto
-
-Este projeto serve como template base de autenticação para acelerar o desenvolvimento de novos sistemas fullstack.
-
-Pode ser utilizado como ponto de partida para:
-
-Sistemas administrativos
-
-Dashboards
-
-ERPs
-
-Aplicações SaaS
-
-Projetos de portfólio
-
-Melhorias Futuras
-
- Refresh Token
-
- Recuperação de senha
-
- Controle de permissões por perfil
-
- Docker
-
- Deploy em produção
+Henrique Bernardo
+Full Stack Developer
+React • Node.js • PostgreSQL
