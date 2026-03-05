@@ -1,125 +1,177 @@
-## 🎥 Demo
+🔐 Auth Starter Template
+
+Sistema completo de autenticação Fullstack utilizando React, Node.js, Express, Prisma e PostgreSQL.
+
+Projeto desenvolvido com foco em boas práticas, arquitetura organizada e segurança, servindo como template inicial para novos sistemas que precisam de autenticação com JWT.
+
+🎥 Demo
 ![Demo do sistema](frontend/assets/demo.gif)
+
+## 🚀 Live Demo
+https://auth-starter-template.vercel.app/
+
+🚀 Tecnologias Utilizadas
 
 ![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-🔐 auth-starter-template
 📌 Sobre o Projeto
 
-Sistema completo de autenticação Fullstack desenvolvido com foco em arquitetura profissional, segurança e boas práticas.
+Este projeto implementa um sistema completo de autenticação, incluindo:
 
-Inclui:
+✅ Cadastro de usuários
+✅ Login com geração de JWT
+✅ Senha criptografada com Bcrypt
+✅ Middleware de autenticação
+✅ Proteção de rotas privadas
+✅ Integração completa Frontend + Backend
+✅ Estrutura preparada para deploy
 
-Cadastro de usuário
+Ele pode ser utilizado como base para diversos tipos de aplicações, como:
 
-Login com JWT
+Sistemas administrativos
 
-Proteção de rotas
+Dashboards
 
-Middleware de autenticação
+ERPs
 
-Integração frontend + backend
+Aplicações SaaS
 
-Estrutura preparada para produção
+Sistemas internos
 
-🚀 Tecnologias Utilizadas
-Backend
-
-Node.js
-
-Express
-
-Prisma ORM (v5)
-
-PostgreSQL
-
-JWT (Json Web Token)
-
-Bcrypt
-
-Frontend
-
-React (Vite)
-
-Axios
-
-CSS
-
-🏗 Arquitetura
-
-auth-system
+🏗 Arquitetura do Projeto
+auth-starter-template
+│
 ├── backend
-│ ├── controllers
-│ ├── middleware
-│ ├── routes
-│ ├── prisma
-│ └── server.js
+│   ├── controllers
+│   ├── middleware
+│   ├── routes
+│   ├── prisma
+│   └── src/server.js
 │
 └── frontend
-├── pages
-├── services
-└── App.jsx
+    ├── pages
+    ├── services
+    └── App.jsx
 
-Arquitetura separada por responsabilidades seguindo padrão REST.
+Arquitetura organizada por responsabilidades seguindo boas práticas de API REST.
 
 🔐 Fluxo de Autenticação
 
-Usuário realiza cadastro
+1️⃣ Usuário realiza cadastro
+2️⃣ Senha é criptografada com Bcrypt
+3️⃣ Login gera Token JWT
+4️⃣ Middleware valida o token
+5️⃣ Rotas protegidas exigem autenticação
 
-Senha é criptografada com Bcrypt
+📡 API Endpoints
+🔹 Registrar Usuário
 
-Login gera token JWT
+POST /api/auth/register
 
-Token é validado em middleware
+Body:
 
-Rotas protegidas exigem autenticação
+{
+  "name": "Henrique",
+  "email": "henrique@email.com",
+  "password": "123456"
+}
+🔹 Login
 
-⚙️ Como rodar o projeto
-1️⃣ Clonar repositório
-git clone https://github.com/seuusuario/auth-fullstack-system.git
+POST /api/auth/login
 
-2️⃣ Backend
+Body:
+
+{
+  "email": "henrique@email.com",
+  "password": "123456"
+}
+
+Resposta:
+
+{
+  "token": "jwt_token_aqui"
+}
+🔹 Perfil do Usuário
+
+GET /api/users/me
+
+Headers:
+
+Authorization: Bearer TOKEN
+⚙️ Como Rodar o Projeto
+1️⃣ Clonar o Repositório
+git clone https://github.com/seuusuario/auth-starter-template.git
+🔹 Backend
 cd backend
 npm install
-npx prisma migrate dev
-npm run dev
 
 Criar arquivo .env:
+
 DATABASE_URL="sua_string_postgres"
 JWT_SECRET="sua_chave_secreta"
 PORT=3001
 
-3️⃣ Frontend
+Gerar Prisma Client:
+
+npx prisma generate
+
+Rodar migrations:
+
+npx prisma migrate dev
+
+Iniciar servidor:
+
+npm run dev
+
+API rodando em:
+
+http://localhost:3001
+🔹 Frontend
 cd frontend
 npm install
 npm run dev
 
 Criar .env:
+
 VITE_API_URL=http://localhost:3001
 
+Aplicação rodando em:
+
+http://localhost:5173
 🌎 Deploy
-Backend: Render
-Frontend: Vercel
 
-Projeto pronto para produção.
+Projeto preparado para deploy em produção.
 
-📌 Objetivo
+Frontend hospedado no Vercel
+
+Backend hospedado no Render
+
+Banco de dados PostgreSQL (Neon)
+
+🎯 Objetivo do Projeto
 
 Este projeto foi desenvolvido para consolidar conhecimentos em:
 
 Arquitetura Fullstack
 
-Autenticação segura
+Autenticação segura com JWT
+
+Criptografia de senha
 
 Integração API REST
 
 Deploy em produção
 
+Organização profissional de projetos
+
 👨‍💻 Autor
 
 Henrique Bernardo
+
 Full Stack Developer
-React • Node.js • PostgreSQL
+React • Node.js • PostgreSQL • APIs REST
+
+⭐ Se este projeto te ajudou ou você gostou, considere dar uma estrela no repositório.
