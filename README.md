@@ -21,13 +21,21 @@ https://auth-starter-template.vercel.app/
 
 Este projeto implementa um sistema completo de autenticação, incluindo:
 
+
 ✅ Cadastro de usuários
+
 ✅ Login com geração de JWT
+
 ✅ Senha criptografada com Bcrypt
+
 ✅ Middleware de autenticação
+
 ✅ Proteção de rotas privadas
+
 ✅ Integração completa Frontend + Backend
+
 ✅ Estrutura preparada para deploy
+
 
 Ele pode ser utilizado como base para diversos tipos de aplicações, como:
 
@@ -42,28 +50,44 @@ Aplicações SaaS
 Sistemas internos
 
 🏗 Arquitetura do Projeto
+
 auth-starter-template
 │
+
 ├── backend
+
 │   ├── controllers
+
 │   ├── middleware
+
 │   ├── routes
+
 │   ├── prisma
+
 │   └── src/server.js
+
 │
+
 └── frontend
+
     ├── pages
+    
     ├── services
+    
     └── App.jsx
 
 Arquitetura organizada por responsabilidades seguindo boas práticas de API REST.
 
 🔐 Fluxo de Autenticação
 
-1️⃣ Usuário realiza cadastro
+1️⃣ Usuário realiza cadastro	
+
 2️⃣ Senha é criptografada com Bcrypt
+
 3️⃣ Login gera Token JWT
+
 4️⃣ Middleware valida o token
+
 5️⃣ Rotas protegidas exigem autenticação
 
 📡 API Endpoints
@@ -74,9 +98,13 @@ POST /api/auth/register
 Body:
 
 {
+  
   "name": "Henrique",
+  
   "email": "henrique@email.com",
+  
   "password": "123456"
+
 }
 🔹 Login
 
@@ -85,15 +113,21 @@ POST /api/auth/login
 Body:
 
 {
+
   "email": "henrique@email.com",
+  
   "password": "123456"
+
 }
 
 Resposta:
 
 {
+
   "token": "jwt_token_aqui"
+
 }
+
 🔹 Perfil do Usuário
 
 GET /api/users/me
