@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import Login from './pages/login/login'
 import Cadastro from "./pages/Cadastro/Cadastro"
-import Dashboard from "./pages/Dashboard/Dashboard"
+import Dashboard from "./pages/dashboard/dashboard"
 import ProtectedRoute from "./components/ProtectedRoute"
 function App() {
   return (
